@@ -1,4 +1,6 @@
-# Rhizome
+<p align="center">
+  <img src="assets/logo.png" alt="Rhizome" width="440">
+</p>
 
 Reach a machine at home with a plain `ssh <machine>@ssh.example.com`, from any SSH client
 (scp, SFTP and VS Code included), through a small VPS. Nothing to open on the router,

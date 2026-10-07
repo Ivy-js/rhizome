@@ -1,0 +1,21 @@
+# Installed by Rhizome (original: sshd_config.orig). Port 22 belongs to the relay.
+Port @ADMIN_PORT@
+PermitRootLogin prohibit-password
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
+AllowUsers root rhizome
+ClientAliveInterval 15
+ClientAliveCountMax 3
+
+# Home server: reverse tunnel and route management only
+Match User rhizome
+    AllowTcpForwarding remote
+    GatewayPorts no
+    AllowAgentForwarding no
+    PermitTTY no
+    ForceCommand /usr/local/sbin/rhizome-routes
